@@ -4,7 +4,7 @@
 const newNumberBtn = document.querySelector(".js-new-number-btn");
 const playBtn = document.querySelector(".js-play-btn");
 const cardBolitasElement = document.querySelector(".js-bingo-numbers");
-const resetElement = document.querySelector('.js-reset-btn');
+const resetElement = document.querySelector(".js-reset-btn");
 
 let cardNumbers = [];
 let cardBolitas = [];
@@ -57,7 +57,7 @@ const setPlay = () => {
 };
 
 const playRound = () => {
- //Jugamos una ronda entera
+  //Jugamos una ronda entera
   count++;
   createNewBingoNumber();
   paintCardNumbers();
@@ -119,9 +119,9 @@ const paintMatchedCardNumber = () => {
 };
 
 const isThereBingo = () => {
- //¿Han salido todos los números?
-  if(handlePlay  || handleNewNumber){
-    if(count === 10) {
+  //¿Han salido todos los números?
+  if (handlePlay || handleNewNumber) {
+    if (count === 10) {
       //detener juego y volver a jugar
       for (const item of cardNumbers) {
         for (const ball of cardBolitas) {
@@ -136,29 +136,29 @@ const isThereBingo = () => {
   }
 };
 
-const handlerReset = () =>{
+const handlerReset = () => {
   cardBolitas = [];
   cardNumbers = [];
   count = [];
   init();
   cardBolitasElement.textContent = "";
   hideBingoMessage();
-}
+};
 
 const showBingoMessage = () => {
   //Mostrar mensaje de Han cantado Bingo!!!
   const textElement = document.querySelector(".js-bingo-message");
   textElement.classList.remove("hidden");
-  resetElement.classList.remove('hidden');
+  resetElement.classList.remove("hidden");
 };
 
 const hideBingoMessage = () => {
   const textElement = document.querySelector(".js-bingo-message");
   textElement.classList.add("hidden");
-  resetElement.classList.add('hidden');
+  resetElement.classList.add("hidden");
   newNumberBtn.classList.remove("hidden");
-  playBtn.classList.remove("hidden")
-}
+  playBtn.classList.remove("hidden");
+};
 
 const hideButtons = () => {
   //Ocultar botones de Saca una bolita y Play
@@ -171,7 +171,7 @@ const isPlayingMode = () => {
   if (handlePlay) {
     //- Sí");
     createNewBingoNumberAgain();
-  } else{
+  } else {
     //- No");
   }
 };
@@ -186,7 +186,7 @@ const createNewBingoNumberAgain = () => {
 //listener
 newNumberBtn.addEventListener("click", handleNewNumber);
 playBtn.addEventListener("click", handlePlay);
-resetElement.addEventListener('click', handlerReset);
+resetElement.addEventListener("click", handlerReset);
 
 // init page
 
