@@ -14,6 +14,23 @@ Este juego es un ejercicio extra y lo realice una vez concluido el módulo 2 apl
   - Y destacar con un fondo verde el número de nuestro cartón que coincida con la bolita sacada. Si no coincide pues nada.
   - Como pulsar un montón de veces el botón de "Saca una bolita" es muy muy cansado, vamos a hacer que si se pulsa una vez el botón de play ► se generará una bolita nueva cada un segundo. Por supuesto también se tendrán que mostrar con fondo las bolitas de mi cartón que vayan saliendo.
 - Cuando hayan aparecido todas las bolitas de los números de nuestro cartón debemos mostrar el mensaje "Han cantado bingo!!!" y ocultar los botones de "Saca una bolita" y Play.
+
+##### Instalación de Gulp para entrar al código 
+
+###### Guía de inicio rápido
+
+> **NOTA:** Necesitas tener instalado [Node JS](https://nodejs.org/) para trabajar con este Starter Kit:
+
+*Pasos a seguir cada vez que queremos arrancar un proyecto desde cero:*
+
+1. **Clona esta repositorio desde GitHub**.
+1. **Abre una terminal** en la carpeta raíz del repositorio.
+1. **Instala las dependencias** locales ejecutando en la terminal el comando:
+
+```bash
+npm install
+```
+
 **Pasos para arrancar el proyecto:**
 
 Una vez hemos instalado las dependencias, vamos a arrancar el proyecto. **El proyecto hay que arrancarlo cada vez desees verlo desde tu computador** Para ello ejecuta el comando:
