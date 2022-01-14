@@ -10,6 +10,7 @@ let cardNumbers = [];
 let cardBolitas = [];
 let count = [];
 let timer;
+let ballShar = [];
 
 // start page functions
 
@@ -22,7 +23,7 @@ const init = () => {
 
 const generateRandomNumbers = () => {
   for (let i = 0; i < 20; i++) {
-    const randomNumber = generateRandomNumber(30);
+    const randomNumber = generateRandomNumber(25);
     if (!cardNumbers.includes(randomNumber)) {
       cardNumbers.push(randomNumber);
     } else {
@@ -68,7 +69,7 @@ const playRound = () => {
 const createNewBingoNumber = () => {
   //Generar un nuevo número (no repetido) para Bolitas
   for (let i = 0; i < 1; i++) {
-    const randomNumber = generateRandomNumber(30);
+    const randomNumber = generateRandomNumber(20);
     if (!cardBolitas.includes(randomNumber)) {
       cardBolitas.push(randomNumber);
     } else {
@@ -108,6 +109,8 @@ const paintCardNumbers = () => {
 const paintMatchedCardNumber = () => {
   //- Sí: Pintar con fondo verde
   let number = "";
+  ballShar++;
+  console.log(ballShar);
   for (const item of cardNumbers) {
     for (const ball of cardBolitas) {
       if (item === ball) {
@@ -125,8 +128,11 @@ const isThereBingo = () => {
       //detener juego y volver a jugar
       for (const item of cardNumbers) {
         for (const ball of cardBolitas) {
-          if (item === ball) {
+          if (item === ball && ballShar === 11) {
             showBingoMessage();
+            hideButtons();
+            clearInterval(timer);
+          } else {
             hideButtons();
             clearInterval(timer);
           }
@@ -140,6 +146,7 @@ const handlerReset = () => {
   cardBolitas = [];
   cardNumbers = [];
   count = [];
+  ballShar = [];
   init();
   cardBolitasElement.textContent = "";
   hideBingoMessage();
@@ -149,7 +156,6 @@ const showBingoMessage = () => {
   //Mostrar mensaje de Han cantado Bingo!!!
   const textElement = document.querySelector(".js-bingo-message");
   textElement.classList.remove("hidden");
-  resetElement.classList.remove("hidden");
 };
 
 const hideBingoMessage = () => {
@@ -164,9 +170,10 @@ const hideButtons = () => {
   //Ocultar botones de Saca una bolita y Play
   newNumberBtn.classList.add("hidden");
   playBtn.classList.add("hidden");
+  resetElement.classList.remove("hidden");
 };
 
-const isPlayingMode = () => {
+/*const isPlayingMode = () => {
   //¿Estoy en modo automático?
   if (handlePlay) {
     //- Sí");
@@ -174,7 +181,7 @@ const isPlayingMode = () => {
   } else {
     //- No");
   }
-};
+};*/
 
 const createNewBingoNumberAgain = () => {
   //Esperar un segundo y volver a empezar

@@ -6,6 +6,7 @@
 
 html {
   font-size: 10px;
+  width: 100%;
 }
 
 .page {
@@ -18,16 +19,20 @@ html {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding-bottom: 1rem;
-  background-image: url("../images/palabra.png");
-  background-repeat: no-repeat;
-  background-size: contain;
+  padding-bottom: 0.5rem;
   width: 100%;
   height:100px;
-  display: flex;
-  justify-content: flex-end;
+  @media all and(min-width:768px){
+    height: 150px;
+  }
+  &__img{
+    width:150px;
+    @media all and(min-width:768px){
+      width: 250px;
+    }
+  }
   &__btn{
     display: inline-block;
     margin: 5px;
@@ -46,7 +51,6 @@ html {
     }
   }
 }
-
 /* box */
 
 .box {
@@ -54,9 +58,14 @@ html {
   padding: 10px;
   border: solid 6px #62f7f7;
   border-radius: 4px;
-  background: white;
+  background: rgb(142, 230, 225);
   &__title{
-    font-size: 1.8rem;
+    font-size: 1.3rem;
+    color:#062372e8;
+    @media all and(min-width:768px){
+      font-size: 2rem;
+      padding:5px;
+    }
   }
   &__numbers{
     display: flex;
@@ -69,12 +78,19 @@ html {
 
 .number {
   margin: 5px;
-  padding: 14px 0;
-  width: 57px;
+  padding: 5px 0;
+  width: 35px;
+  height: 35px;
   border: solid 6px #062372e8;
   border-radius: 50%;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  @media all and(min-width:768px){
+    width:50px;
+    height: 50px;
+    padding:10px 0;
+    font-size: 1.7rem;
+  }
 }
 
 .number.selected {
@@ -86,10 +102,13 @@ html {
 
 .message {
   font-family: "Pacifico", cursive;
-  font-size: 6rem;
+  font-size: 2rem;
   text-align: center;
   font-weight: normal;
   color: #353fcf;
+  @media all and(min-width:768px) {
+    font-size: 6rem;
+  }
 }
 .section{
     display:flex;
@@ -119,15 +138,15 @@ html {
 }
 
 .footer{
-    position: fixed;
     background-color: rgba(85, 192, 241, 0.521);
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 40px;
-    bottom: 0;
     left: 0;
+    position:fixed;
+    bottom:0;
     &-contact{
         display: flex;
         &__icons{
