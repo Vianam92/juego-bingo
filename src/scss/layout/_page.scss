@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
@@ -19,21 +18,25 @@ html {
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 0.5rem;
   width: 100%;
-  height:100px;
-  @media all and(min-width:768px){
+  height: 100px;
+
+  @media all and(min-width:768px) {
     height: 150px;
   }
-  &__img{
-    width:150px;
-    @media all and(min-width:768px){
+
+  &__img {
+    width: 150px;
+
+    @media all and(min-width:768px) {
       width: 250px;
     }
   }
-  &__btn{
+
+  &__btn {
     display: inline-block;
     margin: 5px;
     padding: 5px 15px 3px;
@@ -44,13 +47,15 @@ html {
     font-size: 16px;
     color: white;
     transition: background 0.5s, border 0.5s;
-    &:hover{
-        cursor: pointer;
-        background-color: #6debc1;
-        border-color: #5de674;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #6debc1;
+      border-color: #5de674;
     }
   }
 }
+
 /* box */
 
 .box {
@@ -59,18 +64,22 @@ html {
   border: solid 6px #62f7f7;
   border-radius: 4px;
   background: rgb(142, 230, 225);
-  &__title{
+
+  &__title {
     font-size: 1.3rem;
-    color:#062372e8;
-    @media all and(min-width:768px){
+    color: #062372e8;
+
+    @media all and(min-width:768px) {
       font-size: 2rem;
-      padding:5px;
+      padding: 5px;
     }
   }
-  &__numbers{
+
+  &__numbers {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
+    padding: 0px 20px;
   }
 }
 
@@ -85,10 +94,11 @@ html {
   border-radius: 50%;
   text-align: center;
   font-size: 1.2rem;
-  @media all and(min-width:768px){
-    width:50px;
+
+  @media all and(min-width:768px) {
+    width: 50px;
     height: 50px;
-    padding:10px 0;
+    padding: 10px 0;
     font-size: 1.7rem;
   }
 }
@@ -106,15 +116,18 @@ html {
   text-align: center;
   font-weight: normal;
   color: #353fcf;
+
   @media all and(min-width:768px) {
     font-size: 6rem;
   }
 }
-.section{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-  &__again{
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__again {
     display: inline-block;
     margin: 15px 5px 5px 5px;
     padding: 5px 15px 3px;
@@ -127,17 +140,22 @@ html {
     transition: background 0.5s, border 0.5s;
     width: 150px;
 
-}  
+    &:hover {
+      cursor: pointer;
+      background-color: #6debc1;
+      border-color: #5de674;
+    }
+  }
 }
 
 
-/* common */
+  /* common */
 
-.hidden {
-  display: none;
-}
+  .hidden {
+    display: none;
+  }
 
-.footer{
+  .footer {
     background-color: rgba(85, 192, 241, 0.521);
     display: flex;
     justify-content: space-between;
@@ -145,23 +163,28 @@ html {
     width: 100%;
     height: 40px;
     left: 0;
-    position:fixed;
-    bottom:0;
-    &-contact{
+    position: fixed;
+    bottom: 0;
+
+    &-contact {
+      display: flex;
+
+      &__icons {
         display: flex;
-        &__icons{
-            display: flex;
-            margin:5px;
-        &--link{
-            color:rgb(59, 77, 240);
-            padding:5px;
-            margin-right: 10px;
-            font-size: 15px;
-        }}
+        margin: 5px;
+
+        &--link {
+          color: rgb(59, 77, 240);
+          padding: 5px;
+          margin-right: 10px;
+          font-size: 15px;
+        }
+      }
     }
-}
-small{
-    color:rgb(59, 77, 240);
+  }
+
+  small {
+    color: rgb(59, 77, 240);
     margin-left: 10px;
     font-size: 15px;
-}
+  }
