@@ -23,7 +23,7 @@ const init = () => {
 
 const generateRandomNumbers = () => {
   for (let i = 0; i < 20; i++) {
-    const randomNumber = generateRandomNumber(25);
+    const randomNumber = generateRandomNumber(20);
     if (!cardNumbers.includes(randomNumber)) {
       cardNumbers.push(randomNumber);
     } else {
@@ -109,13 +109,13 @@ const paintCardNumbers = () => {
 const paintMatchedCardNumber = () => {
   //- Sí: Pintar con fondo verde
   let number = "";
-  ballShar++;
-  console.log(ballShar);
   for (const item of cardNumbers) {
     for (const ball of cardBolitas) {
       if (item === ball) {
         number = document.getElementById(item);
         number.classList.add("selected");
+      } else {
+        number = null;
       }
     }
   }
@@ -125,19 +125,9 @@ const isThereBingo = () => {
   //¿Han salido todos los números?
   if (handlePlay || handleNewNumber) {
     if (count === 10) {
-      //detener juego y volver a jugar
-      for (const item of cardNumbers) {
-        for (const ball of cardBolitas) {
-          if (item === ball && ballShar === 11) {
-            showBingoMessage();
-            hideButtons();
-            clearInterval(timer);
-          } else {
-            hideButtons();
-            clearInterval(timer);
-          }
-        }
-      }
+      showBingoMessage();
+      hideButtons();
+      clearInterval(timer);
     }
   }
 };
